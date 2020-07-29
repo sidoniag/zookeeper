@@ -1,4 +1,4 @@
-const {animals} = require('./data/animals');
+const { animals } = require('./data/animals');
 const express = require('express');
 
 const PORT = process.env.PORT || 3001;
@@ -51,6 +51,7 @@ function findById(id, animalsArray) {
 
 // GET route
 app.get('/api/animals', (req, res) => {
+  // res.send('Hello!');
   let results = animals;
   if (req.query) {
     results = filterByQuery(req.query, results);
