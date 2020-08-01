@@ -123,9 +123,19 @@ app.post('/api/animals', (req, res) => {
   }
 });
 
-// connect html file
+// connect index.html file
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
+// connect animals.html file
+app.get('/animals', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/animals.html'));
+});
+
+// connect zookeepers.html file
+app.get('/zookeepers', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/zookeepers.html'));
 });
 
 // make server listen

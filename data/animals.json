@@ -126,6 +126,15 @@
         "zany"
       ],
       "id": "12"
+    },
+    {
+      "name": "peacock",
+      "species": "bird",
+      "diet": "herbivore",
+      "personalityTraits": [
+        "zany"
+      ],
+      "id": "13"
     }
   ]
 }
