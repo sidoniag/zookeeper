@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 // middleware
+app.use(express.static('public'));
 // parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
@@ -120,6 +121,11 @@ app.post('/api/animals', (req, res) => {
   const animal = createNewAnimal(req.body, animals);
   res.json(req.body);
   }
+});
+
+// connect html file
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 // make server listen
