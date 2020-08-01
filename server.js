@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3001;
 // initiate server
 const app = express();
 
+// middleware
 // parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
@@ -56,6 +57,15 @@ function findById(id, animalsArray) {
   return result;
 }
 
+// accept POST value add to array
+function createNewAnimal(body, animalsArray) {
+  console.log(body);
+  // our function's main code will go here!
+
+  // return finished code to post route for response
+  return body;
+}
+
 // GET route
 app.get('/api/animals', (req, res) => {
   // res.send('Hello!');
@@ -79,7 +89,8 @@ app.get('/api/animals/:id', (req, res) => {
 // POST route
 app.post('/api/animals', (req, res) => {
   // req.body is where our incoming content will be
-  console.log(req.body);
+  // set id based on what the next index of the array will be
+  req.body.id = animals.length.toString();
   res.json(req.body);
 });
 
